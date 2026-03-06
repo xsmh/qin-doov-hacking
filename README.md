@@ -41,7 +41,7 @@ This is a documentation for hacking Duoqin (Qin) / Doov brand phones.
 
 
 # Overview
-This documentation has been written to walk the owners of Duoqin / Doov devices through flashing Dumbdroid or any other compatible ROM of their choice.
+This documentation has been written to walk the owners of Duoqin / Doov devices through flashing DumberOS (formerly Dumbdroid) or any other compatible ROM of their choice.
 
 The guide assumes that you are using Windows 10/11. If you are using Linux, I trust your ability to figure out the OS specific parts on your own. If you are using macOS, good luck.
 
@@ -53,7 +53,7 @@ The guide has been tested on the following devices:
 **Duoqin:**
 - F21 Pro
 - F22 Pro
-- F22[^F22] (see footnote for Dumbdroid)
+- F22[^F22] (see footnote for DumberOS)
 
 **Doov:**
 - R77 Pro (R77c)
@@ -160,20 +160,20 @@ You need to unlock the bootloader in order to flash the new ROM.
 
 **Note:** Before flashing a new ROM, if you have the `F21 Pro`[^Bands] and live in US/Canada and want to flash the American bands, jump to [Flash American bands on F21 Pro](#flash-american-bands-on-f21-pro)
 
-**Note 2:** Some F21 Pro users might have previously installed TWRP. You will need to [remove TWRP](#remove-twrp-from-f21-pro) in order to flash Dumbdroid.
+**Note 2:** Some F21 Pro users might have previously installed TWRP. You will need to [remove TWRP](#remove-twrp-from-f21-pro) in order to flash DumberOS.
 
-There are a few LineageOS ROMs available that you can try. I'm going to flash Dumbdroid as it's currently the best option for these keypad phones.
+There are a few LineageOS ROMs available that you can try. I'm going to flash DumberOS as it's currently the best option for these keypad phones.
 
 
 1. [Enter fastboot](#enter-fastboot) mode if you aren't in it already.
 2. Run `fastboot reboot fastboot` and wait for the device to reboot into fastboot**D** (colored text on black background).
-3. Erase user data if you are upgrading from the stock ROM. Updating Dumbdroid doesn’t require this step. Run the following commands.  
+3. Erase user data if you are upgrading from the stock ROM. Updating DumberOS doesn’t require this step. Run the following commands.  
 `fastboot erase userdata`  
 `fastboot erase metadata`
-4. Download the appropriate *.img.gz from the [latest build of Dumbdroid](https://github.com/miki151/dumbdroid_build/releases/latest) onto the Linux ISO or the 2nd USB drive. Choose between G-apps and Vanilla (Micro-g). For the F21 pro use the "30" version, for all other phones use "31". 
+4. Download the appropriate *.img.gz from the [latest build of DumberOS](https://github.com/miki151/dumbdroid_build/releases/latest) onto the Linux ISO or the 2nd USB drive. Choose between G-apps and Vanilla (Micro-g). For the F21 pro use the "30" version, for all other phones use "31". 
 5. After the download has finished, extract (unzip) the file by right clicking on it and then clicking `Extract here`. Do **NOT** simply rename it to .img from .img.gz.
 6. Run this command from fastboot**D**  
-`fastboot flash system "Downloads/???.img"` but replace `???` with the actual filename and wait for it to finish. **Note:** The `"Downloads/???.img"` path assumes you extracted the Dumbdroid image inside the Downloads folder of the live Linux image.
+`fastboot flash system "Downloads/???.img"` but replace `???` with the actual filename and wait for it to finish. **Note:** The `"Downloads/???.img"` path assumes you extracted the DumberOS image inside the Downloads folder of the live Linux image.
 8. Run `fastboot reboot` and wait for the device to reboot. If Orange State warning appears, press the power button to proceed and wait 5-10 minutes for the new OS to boot.
 
 
@@ -192,7 +192,7 @@ If you would like to recover from your backup, assuming your backup is on your U
 **Note:** If you encounter the following error message, ignore it: `Error: couldn't detect partition: partitionName, skipping`.
 
 # Remove TWRP from F21 Pro
-If you come from that one infamous guide on XDA where they guide you to install TWRP without making a backup. You have probably been stuck trying to flash Dumbdroid. That's because fastboot**D** is broken on that particular installation of TWRP.
+If you come from that one infamous guide on XDA where they guide you to install TWRP without making a backup. You have probably been stuck trying to flash DumberOS. That's because fastboot**D** is broken on that particular installation of TWRP.
 ## Solution
 Because there are different hardware revisions of the F21 Pro, I cannot guarantee that this solution will work. That's why it's essential to make a backup first. If it does not work for you then you will need to find a boot image that's compatible with your device and does not have TWRP installed.
 
@@ -210,10 +210,10 @@ TWRP should now be gone.
 In this section we will go through the process of flashing American bands on the F21 Pro for users who need them. 
 
 ## Notes 
-- This section should be followed after [unlocking the bootloader](#unlock-the-bootloader) and **before** [flashing a new ROM](#flash-new-rom) because SN Write Tool does not work with LineageOS/Dumbdroid.
+- This section should be followed after [unlocking the bootloader](#unlock-the-bootloader) and **before** [flashing a new ROM](#flash-new-rom) because SN Write Tool does not work with LineageOS/DumberOS.
 - Make sure that you have [made a backup](#make-a-backup).
 - Covered LTE Bands: 2, 4, 12, 13, 17, 66, 71  
-This covers most T-Mobile and Verizon users. In addition to some AT&T support depending on region. Do note that **Verizon** will **not** work if you are going to flash Dumbdroid.  
+This covers most T-Mobile and Verizon users. In addition to some AT&T support depending on region. Do note that **Verizon** will **not** work if you are going to flash DumberOS.  
 
 
 ## Flash
@@ -271,7 +271,7 @@ You are probably trying to flash the `system` partition from fastboot instead of
 Run `fastboot reboot fastboot` and wait for the device to reboot into fastboot**D** (colored text on black background).
 
 ## FAILED (remote: 'Not enough space to resize partition')
-On some devices like the F21 Pro 3GB model, you might run into this error when you try to flash the system partition with Dumbdroid.
+On some devices like the F21 Pro 3GB model, you might run into this error when you try to flash the system partition with DumberOS.
 
 ### Solution
 
@@ -359,7 +359,7 @@ This guide would not have been possible without the amazing contributions from:
 [Deathmist](https://github.com/JamiKettunen/)  
 CatStoleTheCrown
 
-[^F22]: Dumbdroid does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
+[^F22]: DumberOS does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
 [^Apple]: No Apple junk. Unless it has an Intel CPU, the Linux ISO should work fine then. 
 [^Drive]: Any other type of external storage device works.
 [^Capacity]: 8 + 12 GB is also fine.
