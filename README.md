@@ -12,6 +12,8 @@ This is a documentation for hacking Duoqin (Qin) / Doov brand phones.
    * [Boot from USB stick ](#boot-from-usb-stick)
    * [General info about the Linux ISO](#general-info-about-the-linux-iso)
 - [Make a backup](#make-a-backup)
+    * [Option 1 (Recommended)](#option-1-recommended)
+    * [Option 2](#option-2)
 - [Unlock the bootloader](#unlock-the-bootloader)
    * [For most models](#for-most-models)
    * [For F21 Pro and similar models where “press volume up” doesn’t work](#for-f21-pro-and-similar-models-where-press-volume-up-doesnt-work)
@@ -131,8 +133,9 @@ Hold the `Shift` key while pressing the `Restart` button and wait until Windows 
 > Do note that this will only backup the firmware, it will not backup personal user data if you have any stored on your device.
 
 > [!NOTE]
-If your computer has +16GB of RAM, you could skip using the 2nd drive and store the backup directly on the Linux image and upload it to a cloud storage service (like Google Drive) once it's done (keep in mind the Linux ISO would lose all data after a reboot). You would then skip step 1 & 3 and remove the `/media/user/exampleName/` part from the commands and follow the rest as is. I do not recommend this method as it uses RAM as storage and the live image can crash if you run out of it. But it should be safe if you have +32GB RAM.
+If your computer has +16GB of RAM, you could skip using the 2nd drive and store the backup directly on the Linux image and upload it to a cloud storage service (like Google Drive) once it's done (keep in mind the Linux ISO would lose all data after a reboot). I do not recommend this method as it uses RAM as storage and the live image can crash if you run out of it. But it should be safe if you have +32GB RAM. Follow **Option 2** if you want to go this route.
 
+## Option 1 (Recommended)
 1. While booted into the live Linux image, connect your 2nd USB stick and wait for a notification in the top right corner of the screen that says `Volume mounted`. This 2nd USB stick should previously be formatted to exFAT (**not** FAT32), we will use this one for storing the backup. Do **not** unplug the 1st USB stick that has the Linux image on it.
 2. Open the terminal in the Linux ISO by clicking the black square icon in the taskbar.
 3. Type `lsblk` and hit enter. Under `MOUNTPOINTS` you will see an entry similar to  
@@ -140,6 +143,14 @@ If your computer has +16GB of RAM, you could skip using the 2nd drive and store 
 4. Run `mkdir "/media/user/exampleName/stock_rom"` but replace `exampleName` in the path with whatever your drive name was from the previous step. This command creates the folder we will be using to store our backup in.
 5. To make the backup, run `mtk rl --skip userdata "/media/user/exampleName/stock_rom"` but don't forget to replace `exampleName`. Connect the cable to your phone while it is **turned off** and wait for the command to finish running. This will take roughly 10 minutes and will show this message once it is done `DaHandler - All Dumped partitions success`. If the command ran into any errors at any point, you probably don't have enough storage on your 2nd USB drive (possibly due to it being formatted as FAT32) and you should not proceed until you resolve the issue, even if you see the success message at the end. You can double check to see if the files were actually made inside the stock_rom folder of the USB drive using the file explorer, but keep in mind that this does not mean they were made correctly if you did run into any errors.
 6. To backup the preloader, run `mtk r preloader "/media/user/exampleName/stock_rom/preloader.bin" --parttype=boot1`. Don't forget to replace `exampleName` here too. After this has finished, you should now be able to see a bunch of files with .bin extension inside the stock_rom folder of your USB drive.
+
+## Option 2
+
+1. Open the terminal in the Linux ISO by clicking the black square icon in the taskbar.
+2. Run `mkdir stock_rom` to create the folder we will be using to store our backup in.
+3. To make the backup, run `mtk rl --skip userdata stock_rom`. Connect the cable to your phone while it is **turned off** and wait for the command to finish running. This will take roughly 10 minutes and will show this message once it is done `DaHandler - All Dumped partitions success`. If the command ran into any errors at any point, you probably don't have enough storage on your 2nd USB drive (possibly due to it being formatted as FAT32) and you should not proceed until you resolve the issue, even if you see the success message at the end. You can double check to see if the files were actually made inside the stock_rom folder of the USB drive using the file explorer, but keep in mind that this does not mean they were made correctly if you did run into any errors.
+4. To backup the preloader, run `mtk r preloader stock_rom/preloader.bin --parttype=boot1`. After this has finished, you should now be able to see a bunch of files with .bin extension inside the stock_rom folder of your USB drive.
+5. Move the stock_rom folder to an external drive or upload it to a cloud storage solution like Google Drive. **Note:** rebooting the Linux ISO will reset the live image and you will lose your backup if you haven't moved it somewhere else.
 
 # Unlock the bootloader
 You need to unlock the bootloader in order to flash the new ROM.   
