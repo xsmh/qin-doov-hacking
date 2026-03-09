@@ -124,7 +124,8 @@ Hold the `Shift` key while pressing the `Restart` button and wait until Windows 
 
 
  To open the terminal, simply click the black square icon in the task bar at the bottom.  
- Going forward, whenever I mention **Run**, it means type the command that follows in the terminal and press enter. 
+ Going forward, whenever I mention **Run**, it means type the command that follows in the terminal and press enter.  
+ You should always run commands from home directory. If you are having an issue with a command, you should run `cd` first to go back to the home directory if you aren't in it already.
 
 # Make a backup
 
