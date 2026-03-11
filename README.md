@@ -1,6 +1,13 @@
 # Duoqin / Doov Hacking
 This is a documentation for hacking Duoqin (Qin) / Doov brand phones.
 
+# Support Me
+If this saved you time and effort, I’d appreciate your support on Ko-fi.
+
+<a href="https://ko-fi.com/sheep1">
+  <img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0171bfb928b21a7e00_support_me_on_kofi_beige.png" alt="Ko-fi" width="400">
+</a>
+
 # ToC
 - [Overview](#overview)
    * [Tested devices ](#tested-devices)
