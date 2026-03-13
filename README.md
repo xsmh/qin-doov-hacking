@@ -241,7 +241,10 @@ In this section we will go through the process of flashing American bands on the
 - This section should be followed after [unlocking the bootloader](#unlock-the-bootloader) and **before** [flashing a new ROM](#flash-new-rom) because SN Write Tool does not work with LineageOS/DumberOS.
 - Make sure that you have [made a backup](#make-a-backup).
 - Covered LTE Bands: 2, 4, 12, 13, 17, 66, 71  
-This covers most T-Mobile and Verizon users. In addition to some AT&T support depending on region. Do note that **Verizon** will **not** work if you are going to flash DumberOS.  
+This covers most T-Mobile users, in addition to some AT&T support depending on region.  
+
+> [!NOTE]
+> Verizon will not work on DumberOS. As for getting it to work on the stock ROM you will need to flash the 1.1.1 firmware which I won't be covering in this guide. You can look up other guides on how to do that.
 
 
 ## Flash
