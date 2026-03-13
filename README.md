@@ -100,7 +100,8 @@ By following this guide, you **agree to proceed at your own risk**. I'm **not re
 
 # Install the flashing tools 
 This has been by far the most difficult part of the process for most users.
-To simplify it I have created a customized Linux ISO that comes with the tools you need pre-installed. This does not include SN Writer, which you will only need if you are flashing the American bands. You will have to use Windows for it if you need it.
+To simplify it I have created a customized Linux ISO that comes with the tools you need pre-installed. The OS you are using on your machine is irrelevant as it will not be affected.  
+The Linux ISO does not include SN Writer, which you will only need if you are flashing the American bands. You will have to use Windows for that part if you need it.
 
 ## Create bootable USB stick
 1. Download the [Linux ISO](https://drive.google.com/file/d/1Et7JjyKfpadQd9hh9fi7D-ECnHhC0tQT) that comes pre-installed with the tools.
@@ -122,6 +123,8 @@ Hold the `Shift` key while pressing the `Restart` button and wait until Windows 
 **Finally:** When the computer reboots, you will be greeted with a few options. Press enter on the first option `Start Linux Mint` (If you have already done that before and ran into issues, then try picking `Compatibility Mode` instead). Once you have booted into Linux, you will be shown a login screen. Insert the password `user` and hit enter.
 
 ## General info about the Linux ISO
+
+- Password for logging in to the live Linux environment is `user`.
 - There is no persistence. Meaning that any data you store on the Linux ISO itself will be lost after a reboot.
 - Wi-Fi may not work on some computer models due to unavailable proprietary drivers. In which case you will have to either use an Ethernet cable or transfer data via an external drive.
 - Includes empty vbmeta file, American bands partitions, python script to force fastboot mode, and an `F21 Pro` boot image without TWRP installed.
@@ -134,7 +137,8 @@ Hold the `Shift` key while pressing the `Restart` button and wait until Windows 
 
  To open the terminal, simply click the black square icon in the task bar at the bottom.  
  Going forward, whenever I mention **Run**, it means type the command that follows in the terminal and press enter.  
- You should always run commands from home directory. If you are having an issue with a command, you should run `cd` first to go back to the home directory if you aren't in it already.
+ You should always run commands from home directory. If you are having an issue with a command, you should run `cd` first to go back to the home directory if you aren't in it already.  
+  
 
 # Make a backup
 
