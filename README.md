@@ -277,7 +277,7 @@ This covers most T-Mobile users, in addition to some AT&T support depending on r
         Click MD1_DB and navigate to the `MT6761` folder inside the `AP DB Base` folder and choose:  
         `MDDB_InfoCustomAppSrcP_MT6761S00...EDB`  
         Click AP_DB and navigate to the `MT6761` folder inside the `AP DB Base` folder and choose:  
-        `APDB_MT6761_S01__W1947`...  
+        `APDB_MT6761_S01__W1947...`  
         Click Save and return to main window.
     4. Click Start. Enter:  
         IMEI (without spaces)  
