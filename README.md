@@ -207,7 +207,7 @@ If you need to enter fastboot:
 3. Conncect the cable and wait until the command forces the device to reboot into fastboot. You should see a text that says "fastboot" at the bottom left of the screen.
 
 > [!TIP]
-> Alternatively you could try `mtk payload --metamode FASTBOOT` in BROM mode.
+> Alternatively you could try `mtk payload --metamode FASTBOOT` in [BROM](#device-button-combinations) mode.
 
 # Recover from backup
 ⚠️This will factory reset your phone and you will lose your data!  
