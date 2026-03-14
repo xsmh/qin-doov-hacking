@@ -248,7 +248,8 @@ TWRP should now be gone.
 
 # Flash American bands on F21 Pro
 
-⚠️ **Skip this section if you do not live in US/Canada.**
+> [!Note]
+> Skip this section if you do not live in US/Canada.
 
 In this section we will go through the process of flashing American bands on the F21 Pro for users who need them.  
 
