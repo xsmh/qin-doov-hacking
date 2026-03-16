@@ -117,10 +117,9 @@ The Linux ISO does not include SN Writer, which you will only need if you are fl
 ## Boot from USB stick 
 There are two ways you could go about this.
 
-**Option 1:** 
-Hold the `Shift` key while pressing the `Restart` button and wait until Windows prompts you to choose an option. Click `Use a device` and then click `Removable Device`. Windows should now reboot into the USB drive.
+**Option 1:** Connect your USB stick if it is not already. Hold the `Shift` key while pressing the `Restart` button and wait until Windows prompts you to choose an option. Click `Use a device` and then click `Removable Device`. Windows should now reboot into the USB drive.
 
-**Option 2:** Reboot your computer and go into the BIOS. Disable `Secure Boot` and change the boot order to make the USB drive the first option. Save and reboot. These are some general instructions. This method will depend on your computer model, so you will have to look it up if you don't know how to do it. 
+**Option 2:** Connect your USB stick if it is not already. Reboot your computer and go into the BIOS. Disable `Secure Boot` and change the boot order to make the USB drive the first option. Save and reboot. These are some general instructions. This method will depend on your computer model, so you will have to look it up if you don't know how to do it. 
 
 **Finally:** When the computer reboots, you will be greeted with a few options. Press enter on the first option `Start Linux Mint` (If you have already done that before and ran into issues, then try picking `Compatibility Mode` instead). Once you have booted into Linux, you will be shown a login screen. Insert the password `user` and hit enter.
 
@@ -398,6 +397,9 @@ Assuming you are using the Linux ISO in this guide and not some other OS:
 If it still doesn't work try again in [BROM](#device-button-combinations) mode. Repeat step 2-4. On step 5 hold the button combo and plug the cable in while still holding the buttons.
 Repeat this a couple of times if it still doesn't work.
 
+## An error occured while extracting files. Command exited abnormally.
+If you see this error inside the Linux ISO you are probably running out of RAM and the system is crashing because the live image uses RAM for storage. Most likely because your computer has less RAM than what's stated in [Prerequisites](#prerequisites).
+
 # Special Thanks
 
 This guide would not have been possible without the amazing contributions from:
@@ -408,7 +410,7 @@ This guide would not have been possible without the amazing contributions from:
 [CatStoleTheCrown](https://ko-fi.com/storymode)
 
 [^F22]: DumberOS does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
-[^RAM]: 4GB is also possible but not recommended because the Linux ISO will crash if you download and extract the DumberOS image on it. You will have to download and extract the DumberOS image from your main operating system on your computer. You would then put it on an external drive, reboot into the Linux ISO and flsah the image with the correct path provided.
+[^RAM]: 4GB of RAM is also possible but not recommended because the Linux ISO will crash if you download and extract the DumberOS image on it. You will have to download and extract the DumberOS image from your main operating system on your computer. You would then put it on an external drive, reboot into the Linux ISO and flsah the image with the correct path provided.
 [^USB]: At least one USB-A port is required for connecting the phone without adapters because you will most likely run into connection issues if you use an adapter. But you could use an adapter for the USB sticks if you don't have enough USB-A ports on your computer.
 [^Apple]: No Apple junk. Unless it has an Intel CPU, the Linux ISO should work fine then. 
 [^Drive]: Any other type of external storage device works.
