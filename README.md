@@ -264,44 +264,33 @@ This covers most T-Mobile users, in addition to some AT&T support depending on r
 > [!CAUTION] 
 > If you skip SN Write Tool, you’ll get dummy identifiers that may conflict with other devices.  
 
-1. Backup identifiers:  
-    Go to Settings > About Phone, and write down:
+1. Backup Identifiers  
+    1. Go to Settings > About Phone.  
+    2. Write down these fields: **IMEI**, **WiFi MAC, **Bluetooth MAC**.
 
-    IMEI  
-    WiFi MAC Address  
-    Bluetooth Address
-2. Flash LTE bands by running `mtk wl F30_Modem_Files` and wait for it to finish.
-3. Switch to Windows and download [SN Write Tool](https://drive.google.com/file/d/1mmiI9kMxqQdlhN6pV-Z44qI3lXHt9ChA) and unzip.
-4. Restore identifiers with SN Write Tool:  
-    Open SN Write Tool
-    
-    1. Set:  
-        ComPort: USBVCOM  
-        Target Type: Smart Phone  
+2. Flash LTE Bands  
+    1. Run `mtk wl F30_Modem_Files` and wait for it to finish.
 
-    2. Click System Config. Under Write Option, check:  
-            IMEI  
-            BT Address  
-            WiFi Address  
-    3. Under Database File:  
-            Check both “Load AP DB from DUT” and “Load Modem DB from DUT”  
-        Click MD1_DB and navigate to the `MT6761` folder inside the `AP DB Base` folder and choose:  
-        `MDDB_InfoCustomAppSrcP_MT6761S00...EDB`  
-        Click AP_DB and navigate to the `MT6761` folder inside the `AP DB Base` folder and choose:  
-        `APDB_MT6761_S01__W1947...`  
-        Click Save and return to main window.
-    4. Click Start. Enter:  
-        IMEI (without spaces)  
-        BT Address (without colons)  
-        WiFi Address (without colons)  
-    5. Hold Back button, plug in phone, and click OK. Wait for Green PASS confirmation. If a second window pops up, just close it if you already saw PASS.
-5. Boot Up & Verify:   
-   1. Turn on your phone and go to Settings > About Phone. Ensure that IMEI, WiFi MAC, Bluetooth MAC are correct.
-   2. Check active bands:  
-    Dial: **\*#\*#3646633#\*#\***  
-    Navigate to Band Mode  
-    Scroll to confirm bands 2, 4, 12, 13, 17, 66, 71 are active.
+3. Prepare SN Write Tool (Windows)  
+    1. Switch to Windows, download and unzip [SN Write Tool](https://drive.google.com/file/d/1mmiI9kMxqQdlhN6pV-Z44qI3lXHt9ChA).
 
+4. Restore Identifiers  
+    1. Open SN Write Tool
+    2. Set:  
+        ComPort: USBVCOM
+        Target Type: Smart Phone
+    3. Click System Config. Under Write Option, check **IMEI**, **BT Address**, and **WiFi Address**.
+    4. Under Database File
+        1. Check **Load AP DB from DUT** and **Load Modem DB from DUT**.
+        2. Click MD1_DB: Select `MDDB_InfoCustomAppSrcP_MT6761S00...EDB` (inside AP DB Base/MT6761).
+        3. Click AP_DB: Select `APDB_MT6761_S01__W1947...` (inside AP DB Base/MT6761).
+        4. Click Save and return to the main window.
+    5. Click Start and input your saved identifiers (no spaces in IMEI, no colons in BT/WiFi).
+    6. Hold your phone's Back button, plug it in via USB, and click OK. Wait for the green PASS. If a second window pops up, close it if you already saw PASS.
+
+5. Verify
+    1. Turn the phone on and check Settings > About Phone to confirm your identifiers are restored.
+    2. Dial **\*#\*#3646633#\*#\*** to open Engineer Mode. Go to Band Mode, scroll down and confirm bands `2, 4, 12, 13, 17, 66, 71` are active.
 
 # Common errors
 
