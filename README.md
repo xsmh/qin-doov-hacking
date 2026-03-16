@@ -47,6 +47,7 @@ If this saved you time and effort, I’d appreciate your support on Ko-fi.
       + [Solution](#solution-2)
    * [Orange state warning ](#orange-state-warning)
    * [Preloader - \[LIB\]: Status: Handshake failed](#preloader---lib-status-handshake-failed)
+   * [An error occured while extracting files. Command exited abnormally.](#an-error-occured-while-extracting-files-command-exited-abnormally)
 - [Special Thanks](#special-thanks)
 
 
