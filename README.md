@@ -262,19 +262,19 @@ This covers most T-Mobile users, in addition to some AT&T support depending on r
 ## Flash
 
 > [!CAUTION] 
-> If you skip SN Write Tool, you’ll get dummy identifiers that may conflict with other devices.  
+> If you skip SN Write Tool, you’ll get dummy identifiers that may conflict with other devices.
 
-1. Backup Identifiers  
-    1. Go to Settings > About Phone.  
+1. **Backup Identifiers**
+    1. Go to Settings > About Phone.
     2. Write down these fields: **IMEI**, **WiFi MAC, **Bluetooth MAC**.
 
-2. Flash LTE Bands  
+2. **Flash LTE Bands**
     1. Run `mtk wl F30_Modem_Files` and wait for it to finish.
 
-3. Prepare SN Write Tool (Windows)  
+3. **Prepare SN Write Tool (Windows)**
     1. Switch to Windows, download and unzip [SN Write Tool](https://drive.google.com/file/d/1mmiI9kMxqQdlhN6pV-Z44qI3lXHt9ChA).
 
-4. Restore Identifiers  
+4. **Restore Identifiers**
     1. Open SN Write Tool
     2. Set:  
         ComPort: USBVCOM
@@ -288,7 +288,7 @@ This covers most T-Mobile users, in addition to some AT&T support depending on r
     5. Click Start and input your saved identifiers (no spaces in IMEI, no colons in BT/WiFi).
     6. Hold your phone's Back button, plug it in via USB, and click OK. Wait for the green PASS. If a second window pops up, close it if you already saw PASS.
 
-5. Verify
+5. **Verify**
     1. Turn the phone on and check Settings > About Phone to confirm your identifiers are restored.
     2. Dial **\*#\*#3646633#\*#\*** to open Engineer Mode. Go to Band Mode, scroll down and confirm bands `2, 4, 12, 13, 17, 66, 71` are active.
 
