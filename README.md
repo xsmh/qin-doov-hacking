@@ -129,6 +129,7 @@ There are two ways you could go about this.
 - Password for logging in to the live Linux environment is `user`.
 - There is no persistence. Meaning that any data you store on the Linux ISO itself will be lost after a reboot.
 - Wi-Fi may not work on some computer models due to unavailable proprietary drivers. In which case you will have to either use an Ethernet cable or transfer data via an external drive.
+- Any command you run in the terminal is case-sensitive, so type it exactly as instructed. 
 - Includes empty vbmeta file, American bands partitions, python script to force fastboot mode, and an `F21 Pro` boot image without TWRP installed.
 - There are 4 pre-installed programs that you can run with the following commands from the terminal: 
  1. `adb`
