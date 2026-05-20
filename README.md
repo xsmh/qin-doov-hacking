@@ -10,7 +10,6 @@ Support me on <a href="https://ko-fi.com/sheep1">Ko-fi</a> ☕
       + [Officially supported](#officially-supported)
       + [Works but no official support](#works-but-no-official-support)
       + [Does not work](#does-not-work)
-- [Device button combinations](#device-button-combinations)
 - [Warning  ⚠️ ⚠️ ⚠️](#warning--%EF%B8%8F-%EF%B8%8F-%EF%B8%8F)
 - [Prerequisites](#prerequisites)
 - [Install the flashing tools](#install-the-flashing-tools)
@@ -35,6 +34,7 @@ Support me on <a href="https://ko-fi.com/sheep1">Ko-fi</a> ☕
       + [Option 1: Use Linux to rewrite IMEI & MAC](#option-1-experimental-use-linux-to-rewrite-imei--mac)
       + [Option 2: Use Windows to rewrite IMEI & MAC](#option-2-use-windows-to-rewrite-imei--mac)
    * [Verify](#verify)
+- [Device button combinations](#device-button-combinations)
 - [Common errors](#common-errors)
    * [Error: write_sparse_skip_chunk: don't care size XXXXXXXXX is not a multiple of the block size XXXX](#error-write_sparse_skip_chunk-dont-care-size-xxxxxxxxx-is-not-a-multiple-of-the-block-size-xxxx)
    * [FAILED (remote: 'Erase is not allowed on locked devices')](#failed-remote-erase-is-not-allowed-on-locked-devices)
@@ -86,21 +86,6 @@ Some things may not work. Keys may not be mapped correctly, you will need to use
 
 ### Does not work
 - Qin F22[^F22] (see footnote)
-
-# Device button combinations 
-We won't be using any of the button combos in this guide, but they are useful to know sometimes.  
-
-- For BROM mode you will need to run mtkclient first, and then hold the button combo and plug in the cable while still holding the buttons.  
-- Recovery mode is built into the phone and no cable or program is required.  
-
-| Model | BROM (bootrom) | Recovery |
-| :---  | :--- | :--- |
-| **F21 Pro** | `menu` + `back` (top two buttons) | `menu` + `power` + `*`, wait until android logo appears and then hold `power` + `up` |
-| **F22 Pro** | `menu` + `back` (top two buttons) | - |
-| **F22** | `menu` + `back` (top two buttons) | `power` + `up`. Select and enter the `Recovery` option and then hold `power` + `up` again. |
-| **R77 Pro** | `call` + `power`| `#` + `power` for 10 seconds (disabled on some units)|
-| **R77** | `call` + `power`| - |
-| **R17 Pro** | `call` + `power`| - |
 
 # Warning  ⚠️ ⚠️ ⚠️
 - Do **NOT** use AI chatbots for this unless you want a bricked device.
@@ -210,8 +195,6 @@ You need to unlock the bootloader in order to flash the new ROM.
 3. [Enter fastboot](#enter-fastboot).
 4. Run `fastboot --disable-verity --disable-verification flash vbmeta vbmeta_a.bin`.
 
-
-
 # Flash new ROM
 
 >[!NOTE] 
@@ -219,7 +202,6 @@ You need to unlock the bootloader in order to flash the new ROM.
 
 >[!NOTE]
 > Some F21 Pro users might have previously installed TWRP. You will need to [remove TWRP](#remove-twrp-from-f21-pro) in order to flash DumberOS.
-
 
 There are a few LineageOS ROMs available that you can try. I'm going to flash DumberOS as it's currently the best option for these keypad phones.
 
@@ -261,6 +243,7 @@ If you need to enter fastboot:
 > Alternatively you could try `mtk payload --metamode FASTBOOT` in [BROM](#device-button-combinations) mode.
 
 # Recover from backup
+If you have messed something up and would like to recover from your backup, do the following:
 
 > [!WARNING]
 > This will factory reset your phone and you will lose your data!
@@ -352,6 +335,21 @@ Pick one of the following options for flashing the bands. The Linux method is ex
 1. Turn on the phone and check **IMEI**, **WiFi MAC**, **Bluetooth MAC** fields in Settings > About Phone to confirm your identifiers are restored.
 2. Dial **\*#\*#3646633#\*#\*** to open Engineer Mode. Go to Band Mode, scroll down and confirm bands `2, 4, 12, 13, 17, 66, 71` are active.
 3. Test calls/texting and internet data on the stock ROM to make sure whatever issue you might face after installing DumberOS isn't related to your carrier.
+
+# Device button combinations 
+Button combos that are useful to know sometimes.  
+
+- For BROM mode you will need to run mtkclient first, and then hold the button combo and plug in the cable while still holding the buttons.  
+- Recovery mode is built into the phone and no cable or program is required.  
+
+| Model | BROM (bootrom) | Recovery |
+| :---  | :--- | :--- |
+| **F21 Pro** | `menu` + `back` (top two buttons) | `menu` + `power` + `*`, wait until android logo appears and then hold `power` + `up` |
+| **F22 Pro** | `menu` + `back` (top two buttons) | - |
+| **F22** | `menu` + `back` (top two buttons) | `power` + `up`. Select and enter the `Recovery` option and then hold `power` + `up` again. |
+| **R77 Pro** | `call` + `power`| `#` + `power` for 10 seconds (disabled on some units)|
+| **R77** | `call` + `power`| - |
+| **R17 Pro** | `call` + `power`| - |
 
 # Common errors
 
