@@ -217,7 +217,7 @@ There are a few LineageOS ROMs available that you can try. I'm going to flash Du
 5. After the download has finished, extract (unzip) the file by right clicking on it and then clicking `Extract here`. Do **NOT** simply rename it to .img from .img.gz.
 6. Run this command from fastboot**D**  
 `fastboot flash system "Downloads/???.img"` but replace `???` with the actual filename and wait for it to finish. **Note:** The `"Downloads/???.img"` path assumes you extracted the DumberOS image inside the Downloads folder of the live Linux image.
-8. Run `fastboot reboot` and wait for the device to reboot. If Orange State warning appears, press the power button to proceed and wait 5-10 minutes for the new OS to boot.
+8. Run `fastboot reboot` and wait for the device to reboot. If Orange State warning appears, press the power button to proceed and wait 5-10 minutes for the new OS to boot. Don't worry if it seems stuck on orange state warning on the first boot, just give it some time.
 
 <h2 align="center">
     ☕ If this saved you time and effort, I’d appreciate your support on 
