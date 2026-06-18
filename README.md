@@ -454,7 +454,8 @@ Your device will boot in 5 seconds
 A common error that you may get when using mtkclient.
 
 ### Solution
-Assuming you are using the Linux ISO in this guide and not some other OS:
+Assuming you are using the Linux ISO in this guide and not some other OS. The first thing you can try is holding the power button on the phone for 10 seconds while it is connected with the cable. If that doesn't work:
+
 1. Make sure your cable matches the description in [Prerequisites](#prerequisites).
 2. Press CTRL+C to kill mtkclient.
 3. Unplug the cable.
