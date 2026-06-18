@@ -282,7 +282,7 @@ Because there are different hardware revisions of the F21 Pro, I cannot guarante
 TWRP should now be gone.
 
 >[!TIP] 
-> Instead of the mtkclient command in step 3 you could try 
+> Instead of the mtkclient command in step 3 you could try  
 > `antumbra w boot_a TWRPless_F21_Boot/boot_a.bin --da da/v5.bin`.
 
 # Flash American bands on F21 Pro
@@ -437,7 +437,7 @@ Follow step 3-4 from [this section](#for-f21-pro-and-similar-models-where-press-
 3. Connect the cable and wait for the command to finish. Then unplug and reboot the phone to see if the message is gone.
 
 > [!TIP]
-> Alternatively you could try `mtk da vbmeta 3`. Or if mtkclient doesn't work for you, you can try
+> Alternatively you could try `mtk da vbmeta 3`. Or if mtkclient doesn't work for you, you can try  
 > `antumbra w vbmeta_a vbmeta_a.bin --da da/v5.bin`
 
 ## Orange state warning 
