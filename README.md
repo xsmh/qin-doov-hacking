@@ -465,6 +465,8 @@ Assuming you are using the Linux ISO in this guide and not some other OS. The fi
 If it still doesn't work try again in [BROM](#device-button-combinations) mode. Repeat step 2-4. On step 5 hold the button combo and plug the cable in while still holding the buttons.
 Repeat this a couple of times if it still doesn't work.
 
+If all of the above steps fail, read the section below.
+
 ### Use Penumbra to make a backup
 If you are trying to make a backup and the above solution doesn't work you can try using Penumbra instead.
 
