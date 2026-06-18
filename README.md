@@ -50,6 +50,8 @@ Support me on <a href="https://ko-fi.com/sheep1">Ko-fi</a> ☕
       + [Solution](#solution-2)
    * [Orange state warning ](#orange-state-warning)
    * [Preloader - \[LIB\]: Status: Handshake failed](#preloader---lib-status-handshake-failed)
+      + [Solution](#solution-3)
+      + [Use Penumbra to make a backup](#use-penumbra-to-make-a-backup)
    * [An error occured while extracting files. Command exited abnormally.](#an-error-occured-while-extracting-files-command-exited-abnormally)
 - [Special Thanks](#special-thanks)
 
@@ -280,7 +282,8 @@ Because there are different hardware revisions of the F21 Pro, I cannot guarante
 TWRP should now be gone.
 
 >[!TIP] 
-> Instead of the mtkclient command in step 3 you could try `antumbra w boot_a TWRPless_F21_Boot/boot_a.bin --da da/v5.bin`.
+> Instead of the mtkclient command in step 3 you could try 
+> `antumbra w boot_a TWRPless_F21_Boot/boot_a.bin --da da/v5.bin`.
 
 # Flash American bands on F21 Pro
 
@@ -307,7 +310,7 @@ Pick one of the following options for flashing the bands. The Linux method is ex
 5. Follow the steps in [Verify](#verify).
 
 >[!TIP] 
-> Ignore this tip. This is a Placeholder for the Penumbra wl command that will be added in the next release.
+> Ignore this tip. This is a placeholder for the Penumbra wl command that will be added in the next release.
 
 ### Option 2: Use Windows to rewrite IMEI & MAC
 
@@ -434,7 +437,8 @@ Follow step 3-4 from [this section](#for-f21-pro-and-similar-models-where-press-
 3. Connect the cable and wait for the command to finish. Then unplug and reboot the phone to see if the message is gone.
 
 > [!TIP]
-> Alternatively you could try `mtk da vbmeta 3`. Or if mtkclient doesn't work for you, you can try `antumbra w vbmeta_a vbmeta_a.bin --da da/v5.bin`
+> Alternatively you could try `mtk da vbmeta 3`. Or if mtkclient doesn't work for you, you can try
+> `antumbra w vbmeta_a vbmeta_a.bin --da da/v5.bin`
 
 ## Orange state warning 
 Your device may show this message on boot. This is normal as long as your device boots after you press the power button and wait 5 seconds.
