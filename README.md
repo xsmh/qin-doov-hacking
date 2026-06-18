@@ -108,7 +108,7 @@ To simplify it I have created a customized Linux ISO that comes with the tools y
 The Linux ISO does not include SN Write Tool, which you will only need if you are flashing the American bands and for whatever reason you decide to not go with the Linux way of rewriting the identifiers. You will have to use Windows for that part if you need it.
 
 ## Create bootable USB stick
-1. Download the [Linux ISO](https://drive.google.com/file/d/1uyO3WX3wNMXtjAiJSOnh0DY5FgMUvy35) that comes pre-installed with the tools.
+1. Download the [Linux ISO](https://drive.google.com/file/d/17nvR8j1S72WELOQnGWsEw8N6kKz9UEDM) that comes pre-installed with the tools.
 2. Download and install [Rufus](https://rufus.ie/en/#download).
 3. Launch Rufus and insert a USB stick. Your USB drive should show up in the `Device` field.
 4. Click `SELECT`. Choose the Linux ISO and click `Open` to confirm.
@@ -132,11 +132,12 @@ There are two ways you could go about this.
 - Wi-Fi may not work on some computer models due to unavailable proprietary drivers. In which case you will have to either use an Ethernet cable or transfer data via an external drive.
 - Any command you run in the terminal is case-sensitive, so type it exactly as instructed. 
 - Includes empty vbmeta file, American bands partitions, python script to force fastboot mode, bash script to rewrite IMEI & MAC, and an `F21 Pro` boot image without TWRP.
-- There are 4 pre-installed programs that you can run with the following commands from the terminal: 
+- There are 5 pre-installed programs that you can run with the following commands from the terminal: 
  1. `adb`
  2. `fastboot`
  3. `ghex`
  4. `mtk` for CLI mode of mtkclient & `mtk_gui` for the graphical interface
+ 5. `antumbra` for Penumbra CLI
 
 
  To open the terminal, simply click the black square icon in the task bar at the bottom.  
@@ -194,6 +195,9 @@ You need to unlock the bootloader in order to flash the new ROM.
 2. Run `mtk da seccfg unlock`. Connect the cable and wait for the command to finish.
 3. [Enter fastboot](#enter-fastboot).
 4. Run `fastboot --disable-verity --disable-verification flash vbmeta vbmeta_a.bin`.
+
+>[!TIP] 
+> Instead of the mtkclient command in step 2 you could try `antumbra seccfg unlock --da da/v5.bin`.
 
 # Flash new ROM
 
@@ -275,6 +279,9 @@ Because there are different hardware revisions of the F21 Pro, I cannot guarante
 
 TWRP should now be gone.
 
+>[!TIP] 
+> Instead of the mtkclient command in step 3 you could try `antumbra w boot_a TWRPless_F21_Boot/boot_a.bin --da da/v5.bin`.
+
 # Flash American bands on F21 Pro
 
 > [!Note]
@@ -298,6 +305,9 @@ Pick one of the following options for flashing the bands. The Linux method is ex
 3. Run `sudo sh rewrite.sh`, type in the password `user` once prompted and hit enter to rewrite IMEI and MAC addresses to the LTE bands files.
 4. Run `mtk wl F30_Modem_Files`, connect the cable and wait for the command to finish running to flash LTE bands.
 5. Follow the steps in [Verify](#verify).
+
+>[!TIP] 
+> Ignore this tip. This is a Placeholder for the Penumbra wl command that will be added in the next release.
 
 ### Option 2: Use Windows to rewrite IMEI & MAC
 
@@ -424,7 +434,7 @@ Follow step 3-4 from [this section](#for-f21-pro-and-similar-models-where-press-
 3. Connect the cable and wait for the command to finish. Then unplug and reboot the phone to see if the message is gone.
 
 > [!TIP]
-> Alternatively you could try `mtk da vbmeta 3`.
+> Alternatively you could try `mtk da vbmeta 3`. Or if mtkclient doesn't work for you, you can try `antumbra w vbmeta_a vbmeta_a.bin --da da/v5.bin`
 
 ## Orange state warning 
 Your device may show this message on boot. This is normal as long as your device boots after you press the power button and wait 5 seconds.
@@ -437,6 +447,9 @@ Your device will boot in 5 seconds
 ```
 
 ## Preloader - [LIB]: Status: Handshake failed
+A common error that you may get when using mtkclient.
+
+### Solution
 Assuming you are using the Linux ISO in this guide and not some other OS:
 1. Make sure your cable matches the description in [Prerequisites](#prerequisites).
 2. Press CTRL+C to kill mtkclient.
@@ -446,6 +459,17 @@ Assuming you are using the Linux ISO in this guide and not some other OS:
 
 If it still doesn't work try again in [BROM](#device-button-combinations) mode. Repeat step 2-4. On step 5 hold the button combo and plug the cable in while still holding the buttons.
 Repeat this a couple of times if it still doesn't work.
+
+### Use Penumbra to make a backup
+If you are trying to make a backup and the above solution doesn't work you can try using Penumbra instead.
+
+The following command will replace the mtkclient steps in [Make a backup](#make-a-backup). That would be steps **5-6** in [Option 1](#option-1-recommended-store-backup-on-2nd-usb-stick), and steps **3-4** in [Option 2](#option-2-store-backup-on-the-live-linux-environment). So you would skip those steps and run this command instead. This should take a few minutes and you will see a text saying `All partitions read successfully` once it's done.
+
+If you followed **Option 1**:
+Run `antumbra rl "/media/user/exampleName/stock_rom" --skip userdata --da da/v5.bin` and remember to replace `exampleName` as mentioned earlier in the guide.
+
+If you followed **Option 2**:
+Run `antumbra rl stock_rom --skip userdata --da da/v5.bin`.
 
 ## An error occured while extracting files. Command exited abnormally.
 If you see this error inside the Linux ISO you are probably running out of RAM and the system is crashing because the live image uses RAM for storage. Most likely because your computer has less RAM than what's stated in [Prerequisites](#prerequisites).
