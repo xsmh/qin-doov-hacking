@@ -441,8 +441,9 @@ Follow step 3-4 from [this section](#for-f21-pro-and-similar-models-where-press-
 > `antumbra w vbmeta_a vbmeta_a.bin --da da/v5.bin`
 
 ## Orange state warning 
-Your device may show this message on boot. This is normal as long as your device boots after you press the power button and wait 5 seconds.
-You don't need to remove it but you can if you wish to, although it may require some effort. Follow the [AlikornSause guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO?tab=readme-ov-file#removing-the-orange-state-warning-text) if you are interested.
+Your device may show this message on boot. This is normal as long as your device boots after you press the power button and wait 5 seconds. If it doesn't boot up then you probably have the [dm-verity corruption](#dm-verity-corruption) issue without the corruption message appearing. Follow the solution from that section.  
+
+If your device does boot up after pressing the power button, you don't need to remove the message but if you wish to remove it you can follow the [AlikornSause guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO?tab=readme-ov-file#removing-the-orange-state-warning-text).
 
 ```
 Orange State
