@@ -168,6 +168,7 @@ If your computer has +16GB of RAM, you could skip using the 2nd drive and store 
 4. Run `mkdir "/media/user/exampleName/stock_rom"` but replace `exampleName` in the path with whatever your drive name was from the previous step. This command creates the folder we will be using to store our backup in.
 5. To make the backup, run `mtk rl --skip userdata "/media/user/exampleName/stock_rom"` but don't forget to replace `exampleName`. Connect the cable to your phone while it is **turned off** and wait for the command to finish running. This will take roughly 10 minutes and will show this message once it is done `DaHandler - All Dumped partitions success`. If the command ran into any errors at any point, you probably don't have enough storage on your 2nd USB drive (possibly due to it being formatted as FAT32) and you should not proceed until you resolve the issue, even if you see the success message at the end. You can double check to see if the files were actually made inside the `stock_rom` folder of the USB drive using the file explorer, but keep in mind that this does not mean they were made correctly if you did run into any errors.
 6. To backup the preloader, run `mtk r preloader "/media/user/exampleName/stock_rom/preloader.bin" --parttype=boot1`. Don't forget to replace `exampleName` here too. After this has finished, you should now be able to see a bunch of files with .bin extension inside the stock_rom folder of your USB drive.
+7. After the backup process is done, run `sync`.
 
 ## Option 2: store backup on the live Linux environment
 
@@ -175,7 +176,8 @@ If your computer has +16GB of RAM, you could skip using the 2nd drive and store 
 2. Run `mkdir stock_rom` to create the folder we will be using to store our backup in.
 3. To make the backup, run `mtk rl --skip userdata stock_rom`. Connect the cable to your phone while it is **turned off** and wait for the command to finish running. This will take roughly 10 minutes and will show this message once it is done `DaHandler - All Dumped partitions success`. If the command ran into any errors at any point you should not proceed until you resolve the issue, even if you see the success message at the end. You can double check to see if the files were actually made inside the `stock_rom` folder which you can find inside the home folder using the file explorer, but keep in mind that this does not mean they were made correctly if you did run into any errors.
 4. To backup the preloader, run `mtk r preloader stock_rom/preloader.bin --parttype=boot1`. After this has finished, you should now be able to see a bunch of files with .bin extension inside the `stock_rom` folder of your USB drive.
-5. Move the stock_rom folder to an external drive or upload it to a cloud storage solution like Google Drive. **Note:** rebooting the Linux ISO will reset the live image and you will lose your backup if you haven't moved it somewhere else.
+5. After the backup process is done, run `sync`.
+6. Move the stock_rom folder to an external drive or upload it to a cloud storage solution like Google Drive. **Note:** rebooting the Linux ISO will reset the live image and you will lose your backup if you haven't moved it somewhere else.
 
 # Unlock the bootloader
 > [!WARNING]
