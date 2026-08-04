@@ -74,7 +74,6 @@ The guide itself should work on most Qin and Doov devices. As for DumberOS suppo
 - Doov R77
 - Doov R17 (Z17) Pro (3.5 inch screen)
 
-- Dumber Mini
 
 ### Works but no official support
 Some things may not work. Keys may not be mapped correctly, you will need to use a keymapper. Your experience will vary.
