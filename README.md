@@ -64,10 +64,9 @@ The guide assumes that you are using Windows 10/11. If you are using Linux, I tr
 If you encounter any issues while following this guide, refer to the [common errors](#common-errors) section. If your issue isn’t listed there, please [open a new issue](https://github.com/xsmh/duoqin-doov-hacking/issues/new) in this repository and include a description of it along with the relevant logs.
 
 ## Device compatibility
-The guide itself should work on most Qin and Doov devices. As for DumberOS support, it will depend on the device:
+The guide itself should work on most Qin and Doov devices. It will only not work with some devices like the Dumber Mini or a certain hardware revision of the Qin F21. In the case of the F21, this only applies to a number of devices that have chinese stock ROM without google play on them. MTKclient will return one or some of the following values as true in the logs if you have one of these devices `SBC enabled: True, DAA enabled: True, SLA enabled: True`. However this is not the case for the Dumber Mini, all of these values will return false but it still requires a DA from the manufacturer that we do not have access to. No compatibility with MTKclient means that you won't be able to make a backup or flash other ROMs easily. Even if you are able to flash another ROM using fastboot, there is a huge risk of bricking the device if anything goes wrong. So I recommend against it. My advice is to avoid buying devices like these as they are essentially e-waste.  
 
-> [!NOTE]
-> This guide will not work with some devices like the Dumber Mini or a certain hardware revision of the Qin F21 . In the case of the F21, this only applies to a number of devices that have chinese stock ROM without google play on them. MTKclient will return one or some of the following values as true in the logs if you have one of these devices `SBC enabled: True, DAA enabled: True, SLA enabled: True`. However this is not the case for the Dumber Mini, all of these values will return false but it still requires a DA from the manufacturer that we do not have access to. No compatibility with MTKclient means that you won't be able to make a backup or flash other ROMs easily. Even if you are able to flash another ROM using fastboot, there is a huge risk of bricking the device if anything goes wrong. So I recommend against it. My advice is to avoid buying devices like these as they are essentially e-waste.
+As for DumberOS support, it will depend on the device as stated below.
 
 ### Officially supported
 - Qin F21 Pro
@@ -490,7 +489,7 @@ If you see this error inside the Linux ISO you are probably running out of RAM a
 1. Unplug the cable.
 2. Hold power button for 30-60 seconds.
 
-If this doesn't work, your device is probably stuck in BROM mode. You will need to disassemble the device and physically unplug the battery.
+If this doesn't work, your device is probably stuck in BROM mode. You will need to disassemble the device and physically unplug the battery. Or you can just wait until the battery drains itself, but that will probably take a while.
 1. Unplug the battery for 2 minutes.
 2. Hold the power button for 30 seconds.
 3. Replug the battery and hold the power button to turn on the device.
