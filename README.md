@@ -66,6 +66,9 @@ If you encounter any issues while following this guide, refer to the [common err
 ## Device compatibility
 The guide itself should work on most Qin and Doov devices. As for DumberOS support, it will depend on the device:
 
+> [!NOTE]
+> This guide will not work with some devices like the Dumber Mini or a certain hardware revision of the Qin F21 . In the case of the F21, this only applies to a number of devices that have chinese stock ROM without google play on them. MTKclient will return one or some of the following values as true in the logs if you have one of these devices `SBC enabled: True, DAA enabled: True, SLA enabled: True`. However this is not the case for the Dumber Mini, all of these values will return false but it still requires a DA from the manufacturer that we do not have access to. No compatibility with MTKclient means that you won't be able to make a backup or flash other ROMs easily. Even if you are able to flash another ROM using fastboot, there is a huge risk of bricking the device if anything goes wrong. So I recommend against it. My advice is to avoid buying devices like these as they are essentially e-waste.
+
 ### Officially supported
 - Qin F21 Pro
 - Qin F22 Pro
@@ -154,7 +157,7 @@ There are two ways you could go about this.
 > Do note that this will only backup the firmware, it will not backup personal user data if you have any stored on your device.
 
 > [!NOTE]
-If your computer has +16GB of RAM, you could skip using the 2nd drive and store the backup directly on the Linux image and upload it to a cloud storage service (like Google Drive) once it's done (keep in mind the Linux ISO would lose all data after a reboot). I do not recommend this method as it uses RAM as storage and the live image can crash if you run out of it. But it should be safe if you have +32GB RAM. Follow **Option 2** if you want to go this route.
+> If your computer has +16GB of RAM, you could skip using the 2nd drive and store the backup directly on the Linux image and upload it to a cloud storage service (like Google Drive) once it's done (keep in mind the Linux ISO would lose all data after a reboot). I do not recommend this method as it uses RAM as storage and the live image can crash if you run out of it. But it should be safe if you have +32GB RAM. Follow **Option 2** if you want to go this route.
 
 > [!CAUTION]
 > If you have more than one device and you have already made a backup for one, you should change `stock_rom` in the commands with a different folder name (e.g. `stock_rom2`) so that you do not overwrite the already existing backup.
@@ -483,6 +486,15 @@ Run `antumbra rl stock_rom --skip userdata --da da/v5.bin`.
 
 ## An error occured while extracting files. Command exited abnormally.
 If you see this error inside the Linux ISO you are probably running out of RAM and the system is crashing because the live image uses RAM for storage. Most likely because your computer has less RAM than what's stated in [Prerequisites](#prerequisites).
+
+## Device does not charge or boot after connecting it to mtkclient.
+1. Unplug the cable.
+2. Hold power button for 30-60 seconds.
+
+If this doesn't work, your device is probably stuck in BROM mode. You will need to disassemble the device and physically unplug the battery.
+1. Unplug the battery for 2 minutes.
+2. Hold the power button for 30 seconds.
+3. Replug the battery and hold the power button to turn on the device.
 
 # Special Thanks
 
