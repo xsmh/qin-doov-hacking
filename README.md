@@ -94,6 +94,7 @@ Some things may not work. Keys may not be mapped correctly, you will need to use
 - Do **NOT** use AI chatbots for this unless you want a bricked device.
 - Do **NOT** skip making a backup. I cannot help you if you brick your device and do not have a backup.
 - Do **NOT** delete or flash the preloader. Recovering from a broken preloader is extremely difficult, if not impossible. Especially without a backup.
+- Be careful if you somehow end up on the chinese menu with blue background. There is a wipe emmc option that will brick your device. Try to translate the menu with an OCR reader and whatever you do, do **NOT** pick the emmc option.
 
 Flashing your device can **brick your phone** if done incorrectly.  
 By following this guide, you **agree to proceed at your own risk**. I'm **not responsible** for any damage, data loss, or other issues that may occur.  
