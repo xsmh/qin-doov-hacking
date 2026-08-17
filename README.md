@@ -70,7 +70,7 @@ As for DumberOS support, it will depend on the device as stated below.
 
 ### Officially supported
 - Qin F21 Pro
-- Qin F22 Pro
+- Qin F22 Pro[^F22pro] (see footnote for exception)
 
 - Doov R77 Pro (R77c)
 - Doov R77
@@ -503,6 +503,8 @@ If this doesn't work, your device is probably stuck in BROM mode. You will need 
 - [ars18](https://github.com/alltechdev) - for writing [a very useful script](https://github.com/alltechdev/mtk-imei-switcheroo) for rewriting IMEI & MAC addresses. 
 - [CatStoleTheCrown](https://ko-fi.com/storymode) - for his guide on restoring identifiers with SN Write Tool.
 
+
+[^F22pro]: DumberOS should work on most F22 Pro devices. However, there have been some newer batches that it won't work on, which I believe is due to hardware revisions.
 [^F22]: DumberOS does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
 [^RAM]: 4GB of RAM is also possible but not recommended because the Linux ISO will crash if you download and extract the DumberOS image on it. You will have to download and extract the DumberOS image from your main operating system on your computer. You would then put it on an external drive, reboot into the Linux ISO and flsah the image with the correct path provided.
 [^USB]: At least one USB-A port is required for connecting the phone without adapters because you will most likely run into connection issues if you use it. But you could use an adapter for the USB sticks if you don't have enough USB-A ports on your computer.
