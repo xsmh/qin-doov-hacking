@@ -486,7 +486,11 @@ Run `antumbra rl stock_rom --skip userdata --da da/v5.bin`.
 ## An error occured while extracting files. Command exited abnormally.
 If you see this error inside the Linux ISO you are probably running out of RAM and the system is crashing because the live image uses RAM for storage. Most likely because your computer has less RAM than what's stated in [Prerequisites](#prerequisites).
 
-## Device does not charge or boot after connecting it to mtkclient.
+## Device boots into fastboot instead of the OS after flashing DumberOS
+1. Make sure you have flashed the correct version for your device.
+2. Try re-downloading the dumberOS image as it may have gone corrupt during download/unzipping.
+
+## Device does not charge or boot after connecting it to mtkclient
 1. Unplug the cable.
 2. Hold power button for 30-60 seconds.
 
