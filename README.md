@@ -188,6 +188,10 @@ There are two ways you could go about this.
 You need to unlock the bootloader in order to flash the new ROM.   
 
 ## For most models
+
+>[!NOTE] 
+> If you have the F21 Pro jump to the [next section](#for-f21-pro-and-similar-models-where-press-volume-up-doesnt-work) instead of this one.
+
 1. [Enter fastboot](#enter-fastboot).
 2. Run `fastboot flashing unlock`.
 3. Run `fastboot --disable-verity --disable-verification flash vbmeta vbmeta_a.bin`.  
