@@ -53,7 +53,7 @@ Support me on <a href="https://ko-fi.com/sheep1">Ko-fi</a> ☕
       + [Solution](#solution-3)
       + [Use Penumbra to make a backup](#use-penumbra-to-make-a-backup)
    * [An error occured while extracting files. Command exited abnormally.](#an-error-occured-while-extracting-files-command-exited-abnormally)
-- [Special Thanks](#special-thanks)
+- [Credits](#credits)
 
 
 # Overview
@@ -503,13 +503,13 @@ If this doesn't work, your device is probably stuck in BROM mode. You will need 
 2. Hold the power button for 30 seconds.
 3. Replug the battery and hold the power button to turn on the device.
 
-# Special Thanks
+# Credits 
 
-- [AlikornSause](https://ko-fi.com/alikornsause) - for his amazing [guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO).
-- [Michal Brzozowski](https://ko-fi.com/dumbdroid) - for making [DumberOS](https://dumbermini.com).
-- [Deathmist](https://github.com/JamiKettunen) - for providing f21 boot image and various tips on using fastboot and mtkclient. 
-- [ars18](https://github.com/alltechdev) - for writing [a very useful script](https://github.com/alltechdev/mtk-imei-switcheroo) for rewriting IMEI & MAC addresses. 
-- [CatStoleTheCrown](https://ko-fi.com/storymode) - for his guide on restoring identifiers with SN Write Tool.
+- [AlikornSause](https://ko-fi.com/alikornsause) - Awesome guide [guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO) for the F21.
+- [Michal Brzozowski](https://ko-fi.com/dumbdroid) - [DumberOS](https://dumbermini.com).
+- [Deathmist](https://github.com/JamiKettunen) - Providing F21 boot image and various tips on using fastboot and mtkclient. 
+- [ars18](https://github.com/alltechdev) - [A very useful tool](https://github.com/alltechdev/mtk-imei-switcheroo) for rewriting IMEI & MAC addresses on Linux. 
+- [CatStoleTheCrown](https://ko-fi.com/storymode) - Guide for restoring identifiers with SN Write Tool.
 
 
 [^F22]: DumberOS does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
