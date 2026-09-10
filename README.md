@@ -505,10 +505,10 @@ If this doesn't work, your device is probably stuck in BROM mode. You will need 
 
 # Credits 
 
-- [AlikornSause](https://ko-fi.com/alikornsause) - Awesome guide [guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO) for the F21.
+- [AlikornSause](https://ko-fi.com/alikornsause) - Awesome [guide](https://github.com/AlikornSause/Notes-on-QIN-F21-PRO) for the F21.
 - [Michal Brzozowski](https://ko-fi.com/dumbdroid) - [DumberOS](https://dumbermini.com).
 - [Deathmist](https://github.com/JamiKettunen) - Providing F21 boot image and various tips on using fastboot and mtkclient. 
-- [ars18](https://github.com/alltechdev) - [A very useful tool](https://github.com/alltechdev/mtk-imei-switcheroo) for rewriting IMEI & MAC addresses on Linux. 
+- [ars18](https://github.com/alltechdev) - Making [a very useful tool](https://github.com/alltechdev/mtk-imei-switcheroo) for rewriting IMEI & MAC addresses on Linux. 
 - [CatStoleTheCrown](https://ko-fi.com/storymode) - Guide for restoring identifiers with SN Write Tool.
 
 
