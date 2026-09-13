@@ -103,13 +103,13 @@ By following this guide, you **agree to proceed at your own risk**. I'm **not re
 1. A Qin or Doov brand phone.
 2. A computer with at least 8GB[^RAM] of RAM and three USB-A ports[^USB] for running the flashing tools.[^Apple] (see footnote for Apple)
 3. Two USB flash drives.[^Drive] Each having a capacity of 12GB or more.[^Capacity] Alternatively, you could use only one flash drive if you have +16GB of RAM, check the note in [Make a backup](#make-a-backup) to learn more.
-4. A data transfer USB A-C cable. Strictly A-C, **not** C-C. Make sure the cable you use is capable of transferring data, not just power.[^Cable] No adapters should be used with this cable, it needs to be connected directly to a USB-A port.
+4. A data transfer USB A-C cable. Strictly A-C, **not** C-C. Make sure the cable you use is capable of transferring data, not just power.[^Cable] No adapter should be used with this cable, it needs to be connected directly to a USB-A port.
 
 
 # Install the flashing tools 
-This has been by far the most difficult part of the process for most users.
-To simplify it I have created a customized Linux ISO that comes with the tools you need pre-installed. The OS you are using on your machine is irrelevant as it will not be affected.  
-The Linux ISO does not include SN Write Tool, which you will only need if you are flashing the American bands and for whatever reason you decide to not go with the Linux way of rewriting the identifiers. You will have to use Windows for that part if you need it.
+This has been by far the most difficult part of the process for most users. Often running into issues with getting their devices to connect to the tools for various reasons.
+To simplify the process and avoid any potential issues that you may face I have created a customized Linux ISO that comes with the tools you need pre-installed. The OS you are using on your machine is irrelevant as it will not be affected.  
+The Linux ISO does not include SN Write Tool, which you may only need if you are flashing the American bands and for whatever reason you decide to not go with the Linux way of rewriting the identifiers. You will have to use Windows for that part if you need it.
 
 ## Create bootable USB stick
 1. Download the [Linux ISO](https://drive.google.com/file/d/17nvR8j1S72WELOQnGWsEw8N6kKz9UEDM) that comes pre-installed with the tools.
