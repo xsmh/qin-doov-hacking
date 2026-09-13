@@ -125,7 +125,7 @@ There are two ways you could go about this.
 
 **Option 1:** Connect your USB stick if it is not already. Hold the `Shift` key while pressing the `Restart` button and wait until Windows prompts you to choose an option. Click `Use a device` and then click `Removable Device`. Windows should now reboot into the USB drive.
 
-**Option 2:** Connect your USB stick if it is not already. Reboot your computer and go into the BIOS. Disable `Secure Boot` and change the boot order to make the USB drive the first option. Save and reboot. These are some general instructions. This method will depend on your computer model, so you will have to look it up if you don't know how to do it. 
+**Option 2 (Recommended):** Connect your USB stick if it is not already. Reboot your computer and go into the BIOS. Disable `Secure Boot` and change the boot order to make the USB drive the first option. Save and reboot. These are some general instructions. This method will depend on your computer model, so you will have to look it up if you don't know how to do it. 
 
 **Finally:** When the computer reboots, you will be greeted with a few options. Press enter on the first option `Start Linux Mint` (If you have already done that before and ran into issues, then try picking `Compatibility Mode` instead). Once you have booted into Linux, you will be shown a login screen. Insert the password `user` and hit enter.
 
@@ -166,7 +166,7 @@ There are two ways you could go about this.
 1. While booted into the live Linux image, connect your 2nd USB stick and wait for a notification in the top right corner of the screen that says `Volume mounted`. This 2nd USB stick should previously be formatted to exFAT (**not** FAT32), we will use this one for storing the backup. Do **not** unplug the 1st USB stick that has the Linux image on it.
 2. Open the terminal in the Linux ISO by clicking the black square icon in the taskbar.
 3. Type `lsblk` and hit enter. Under `MOUNTPOINTS` you will see an entry similar to  
-`/media/user/exampleName`. In your case `exampleName` will be whatever your USB drive name is. Take note of this path as we will use it in the next step.  **Note:** Sometimes you might see more than one mountpoint that looks similar but with a different name like `/media/user/differentName`, we want the one that has the flash drive's name and not something else like your computer's internal drive.
+`/media/user/exampleName`. In your case `exampleName` will be whatever your USB drive name is. Take note of this path as we will use it in the next step.  **Note:** Sometimes you might see more than one mountpoint that look similar but with a different name like `/media/user/differentName`, we want the one that has the flash drive's name and not something else like your computer's internal drive.
 4. Run `mkdir "/media/user/exampleName/stock_rom"` but replace `exampleName` in the path with whatever your drive name was from the previous step. This command creates the folder we will be using to store our backup in.
 5. To make the backup, run `mtk rl --skip userdata "/media/user/exampleName/stock_rom"` but don't forget to replace `exampleName`. Connect the cable to your phone while it is **turned off** and wait for the command to finish running. This will take roughly 10 minutes and will show this message once it is done `DaHandler - All Dumped partitions success`. If the command ran into any errors at any point, you probably don't have enough storage on your 2nd USB drive (possibly due to it being formatted as FAT32) and you should not proceed until you resolve the issue, even if you see the success message at the end. You can double check to see if the files were actually made inside the `stock_rom` folder of the USB drive using the file explorer, but keep in mind that this does not mean they were made correctly if you did run into any errors.
 6. To backup the preloader, run `mtk r preloader "/media/user/exampleName/stock_rom/preloader.bin" --parttype=boot1`. Don't forget to replace `exampleName` here too. After this has finished, you should now be able to see a bunch of files with .bin extension inside the stock_rom folder of your USB drive.
@@ -300,7 +300,7 @@ TWRP should now be gone.
 
 In this section we will go through the process of flashing American bands on the F21 Pro for users who need them.  
 
-- This part should be followed after [unlocking the bootloader](#unlock-the-bootloader) and **before** [flashing a new ROM](#flash-new-rom) because SN Write Tool does not work with LineageOS/DumberOS.
+- This part should be followed after [unlocking the bootloader](#unlock-the-bootloader) and **before** [flashing a new ROM](#flash-new-rom) because SN Write Tool does not work with LineageOS/DumberOS and there is no Engineer Mode to verify the bands on it.
 - Make sure that you have [made a backup](#make-a-backup).
 - Covered LTE Bands: 2, 4, 12, 13, 17, 66, 71  
 This covers most T-Mobile users, in addition to some AT&T support depending on region. 
@@ -515,7 +515,7 @@ If this doesn't work, your device is probably stuck in BROM mode. You will need 
 [^F22]: DumberOS does not work with the F22 non-pro, it uses a 32-bit system and you will have to find a compatible ROM on your own.
 [^RAM]: 4GB of RAM is also possible but not recommended because the Linux ISO will crash if you download and extract the DumberOS image on it. You will have to download and extract the DumberOS image from your main operating system on your computer. You would then put it on an external drive, reboot into the Linux ISO and flsah the image with the correct path provided.
 [^USB]: At least one USB-A port is required for connecting the phone without adapters because you will most likely run into connection issues if you use it. But you could use an adapter for the USB sticks if you don't have enough USB-A ports on your computer.
-[^Apple]: No Apple junk. Unless it has an Intel CPU, the Linux ISO should work fine with most Intel devices. 
+[^Apple]: No Apple junk, unless it has an Intel CPU. The Linux ISO should work fine with most Intel devices. 
 [^Drive]: Any other type of external storage device works.
 [^Capacity]: 8 + 12 GB is also fine.
 [^Cable]: The one included in the box should normally work fine.
