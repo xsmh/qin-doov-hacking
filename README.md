@@ -57,7 +57,7 @@ Support me on <a href="https://ko-fi.com/sheep1">Ko-fi</a> ☕
 
 
 # Overview
-This guide has been written to walk the owners of Qin/Doov devices through flashing DumberOS (formerly Dumbdroid) or any other compatible ROM of their choice.
+This guide has been written to walk the owners of Qin(Duoqin)/Doov devices through flashing DumberOS (formerly Dumbdroid) or any other compatible ROM of their choice.
 
 The guide assumes that you are using Windows 10/11. If you are using Linux, I trust your ability to figure out the OS specific parts on your own. If you are using macOS, good luck.
 
